@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using Tekus.Domain.Services;
 
 namespace Tekus.Domain.Countries
@@ -13,6 +14,7 @@ namespace Tekus.Domain.Countries
         public int CountryId { get; set; }
         public string Name { get; set; }
 
-        public virtual IEnumerable<Service> Services { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Service> Services { get; set; }
     }
 }

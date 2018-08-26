@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainServices\Contract\ICountriesServices.cs" />
-    <Compile Include="DomainServices\Contract\ICustomerServices.cs" />
+    <Compile Include="DomainServices\Contract\ICustomersServices.cs" />
     <Compile Include="DomainServices\Contract\IServicesServices.cs" />
     <Compile Include="DomainServices\Impl\CountriesServices.cs" />
     <Compile Include="DomainServices\Impl\CustomerServices.cs" />

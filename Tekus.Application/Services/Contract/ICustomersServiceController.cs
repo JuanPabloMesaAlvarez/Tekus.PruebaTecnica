@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Tekus.Domain.Customers;
 
-namespace Tekus.DomainServices.DomainServices.Contract
+namespace Tekus.Application.Services.Contract
 {
-    interface ICustomerServices
+    public interface ICustomersServiceController
     {
         /// <summary>
         /// Returns all customers

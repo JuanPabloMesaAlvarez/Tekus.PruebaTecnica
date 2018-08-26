@@ -5,11 +5,11 @@ using Tekus.DomainServices.DomainServices.Contract;
 
 namespace Tekus.DomainServices.DomainServices.Impl
 {
-    class CustomerServices : ICustomerServices
+    public class CustomersServices : ICustomersServices
     {
         private readonly IUnitOfWork unitOfWork;
 
-        public CustomerServices(IUnitOfWork unitOfWork)
+        public CustomersServices(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }
