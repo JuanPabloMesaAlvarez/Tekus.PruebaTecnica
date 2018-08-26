@@ -6,15 +6,10 @@ namespace Tekus.Domain.Countries
 {
     public class Country
     {
-        public Country()
-        {
-            this.Services = new HashSet<Service>();
-        }
-
         public int CountryId { get; set; }
         public string Name { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<Service> Services { get; set; }
     }
 }

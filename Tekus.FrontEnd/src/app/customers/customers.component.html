@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table-striped table-hover" style="width: 70%">
+                <thead>
+                    <th></th>
+                    <th>Id</th>
+                    <th>Nit</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of customers">
+                        <td>
+                            <!-- <i class="fas fa-pencil-alt" (click)="selectCustomer(customer.CustomerId)"></i> -->
+                        </td>
+                        <td>
+                            {{customer.CustomerId}}
+                        </td>
+                        <td>
+                            {{customer.Nit}}
+                        </td>
+                        <td>
+                            {{customer.Name}}
+                        </td>
+                        <td>
+                            {{customer.Email}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="col-md-6">
+            <customer [placa]="selectedCustomer"></customer>
+        </div> -->
+    </div>
+</div>

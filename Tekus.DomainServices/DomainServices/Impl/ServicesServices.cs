@@ -5,6 +5,9 @@ using Tekus.DomainServices.DomainServices.Contract;
 
 namespace Tekus.DomainServices.DomainServices.Impl
 {
+    /// <summary>
+    /// This class have all needed domain logic about service entity
+    /// </summary>
     public class ServicesServices : IServicesServices
     {
         private readonly IUnitOfWork unitOfWork;

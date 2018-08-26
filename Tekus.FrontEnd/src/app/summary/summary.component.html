@@ -1,0 +1,28 @@
+<h3>Nro. clientes: {{customers.length}}</h3>
+<br>
+<h3>Nro. servicios: {{services.length}}</h3>
+<br>
+<h3>Servicios por pais: </h3>
+<br>
+<table class="table-striped table-hover" style="width: 70%">
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Servicios</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries">
+            <td>
+                {{country.CountryId}}
+            </td>
+            <td>
+                {{country.Name}}
+            </td>
+            <td>
+                <ul *ngFor="let service of country.Services">
+                    <li>{{service.Name}}</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>

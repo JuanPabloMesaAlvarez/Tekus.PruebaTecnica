@@ -6,6 +6,9 @@ using Tekus.Persistence.DomainContext;
 
 namespace Tekus.Persistence.Repositories
 {
+    /// <summary>
+    /// this class manage all data access to customers table
+    /// </summary>
     class CustomersRepositoy : ICustomersRepository
     {
         private readonly DomainModel context;

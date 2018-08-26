@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Tekus.Domain.Countries;
 using Tekus.Domain.Repositories;
 using Tekus.DomainServices.DomainServices.Contract;
 
 namespace Tekus.DomainServices.DomainServices.Impl
 {
+    /// <summary>
+    /// This class have all needed domain logic about country entity
+    /// </summary>
     public class CountriesServices : ICountriesServices
     {
         private readonly IUnitOfWork unitOfWork;

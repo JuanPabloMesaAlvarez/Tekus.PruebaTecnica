@@ -8,6 +8,9 @@ using Tekus.Persistence.UnitOfWork;
 
 namespace Tekus.Application.Utils
 {
+    /// <summary>
+    /// this class is used to register all  application's dependencies
+    /// </summary>
     public static class RegisterTypes
     {
         public static void RegisterApplicationTypes()
@@ -17,6 +20,9 @@ namespace Tekus.Application.Utils
             RegisterApplicationServices();
         }
 
+        /// <summary>
+        /// this method register interfaces needed in controller and itself implementation
+        /// </summary>
         private static void RegisterApplicationServices()
         {
             DependencyFactory.RegisterType<ICountriesServiceController, CountriesServiceController>();
@@ -24,6 +30,9 @@ namespace Tekus.Application.Utils
             DependencyFactory.RegisterType<IServicesServiceController, ServicesServiceController>();
         }
 
+        /// <summary>
+        /// this method register interfaces needed in domain logic and itself implementation
+        /// </summary>
         private static void RegisterDomainServices()
         {
             DependencyFactory.RegisterType<ICountriesServices, CountriesServices>();
@@ -31,6 +40,9 @@ namespace Tekus.Application.Utils
             DependencyFactory.RegisterType<IServicesServices, ServicesServices>();
         }
 
+        /// <summary>
+        /// this method register interfaces needed in data access and itself implementation
+        /// </summary>
         private static void RegisterDomainRepositories()
         {
             DependencyFactory.RegisterType<IUnitOfWork, UnitOfWork>();

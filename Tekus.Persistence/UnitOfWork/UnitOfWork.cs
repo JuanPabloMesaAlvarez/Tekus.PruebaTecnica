@@ -5,6 +5,9 @@ using Tekus.Persistence.Repositories;
 
 namespace Tekus.Persistence.UnitOfWork
 {
+    /// <summary>
+    /// this class is facade that allow group all repositories in same place 
+    /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
         private readonly DomainModel contexto;

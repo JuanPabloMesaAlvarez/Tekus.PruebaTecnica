@@ -15,6 +15,10 @@ namespace Tekus.Persistence.DomainContext
             Services = base.Set<Service>();
         }
 
+        /// <summary>
+        /// this method configure database whit relationship needed
+        /// </summary>
+        /// <param name="modelBuilder">model builder</param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Service>()

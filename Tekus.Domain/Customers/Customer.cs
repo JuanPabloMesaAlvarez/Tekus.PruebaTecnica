@@ -10,6 +10,6 @@ namespace Tekus.Domain.Customers
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public IEnumerable<Service> Services { get; set; }
+        public ICollection<Service> Services { get; set; }
     }
 }
