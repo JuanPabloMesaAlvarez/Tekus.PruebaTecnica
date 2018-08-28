@@ -25,8 +25,7 @@ namespace Tekus.Persistence.Repositories
 
         public Country GetCountryById(int countryId)
         {
-            var a = context.Countries.Include("Services").First(c => c.CountryId == countryId);
-            return a;
+            return context.Countries.Include("Services").First(c => c.CountryId == countryId); 
         }
     }
 }

@@ -26,5 +26,15 @@ namespace Tekus.DomainServices.DomainServices.Impl
         {
             return unitOfWork.CustomersRepository.GetCustomers();
         }
+
+        public void TurnOffCache()
+        {
+            unitOfWork.TurnOffCache();
+        }
+
+        public void TurnOnCache()
+        {
+            unitOfWork.TurnOnCache();
+        }
     }
 }

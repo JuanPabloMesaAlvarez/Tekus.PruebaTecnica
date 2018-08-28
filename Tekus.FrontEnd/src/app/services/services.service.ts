@@ -1,23 +1,23 @@
-import { HttpHandlerService } from "../Utils/httpHandler/httpHandler.service";
 import { Injectable } from "@angular/core";
 import { Service } from "../models/service";
 import { Observable } from "rxjs";
+import { ServiceBase } from "../Utils/services/serviceBase";
+import { HttpHandlerService } from "../Utils/httpHandler/httpHandler.service";
 
 @Injectable()
-export class ServicesService {
-
-    localStorageName: string = "services";
-    public get dbStorage(): boolean {
-        return JSON.parse(localStorage["dbStorage"]);
-    }
+export class ServicesService extends ServiceBase {
 
     constructor(private http: HttpHandlerService) {
-
+        super()
+        this.localStorageName = "services";
     }
 
     getServices() {
         if (this.dbStorage) {
             var uri = "services";
+            if (this.srvCache) {
+                uri += "cache"
+            }
             return this.http.get(uri);
         }
         else {
@@ -28,6 +28,9 @@ export class ServicesService {
     getServiceById(serviceId: number) {
         if (this.dbStorage) {
             var uri = `services/${serviceId}`;
+            if (this.srvCache) {
+                uri = `servicescache/${serviceId}`;
+            }
             return this.http.get(uri);
         }
         else {
@@ -39,6 +42,9 @@ export class ServicesService {
     createService(service: Service) {
         if (this.dbStorage) {
             var uri = "services";
+            if (this.srvCache) {
+                uri += "cache"
+            }
             return this.http.post(uri, service);
         }
         else {
@@ -50,6 +56,9 @@ export class ServicesService {
     updateService(service: Service) {
         if (this.dbStorage) {
             var uri = `services/${service.ServiceId}`;
+            if (this.srvCache) {
+                uri = `servicescache/${service.ServiceId}`;
+            }
             return this.http.put(uri, service);
         }
     }

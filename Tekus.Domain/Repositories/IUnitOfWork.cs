@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
+using Tekus.Domain.Utils.Cache;
 
 namespace Tekus.Domain.Repositories
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : ICacheMode
     {
         ICountriesRepository CountriesRepository { get; }
         ICustomersRepository CustomersRepository { get; }

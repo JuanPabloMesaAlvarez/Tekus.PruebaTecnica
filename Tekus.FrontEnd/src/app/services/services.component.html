@@ -1,9 +1,27 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-1">
+            <b>Filtro</b>
+        </div>
+        <div class="col-md-1">
+            <select #selectInput class="form-control">
+                <option value="ServiceId">Id</option>
+                <option value="Name">Nombre</option>
+                <option value="Cost">Costo</option>
+                <option value="CustomerId">Cliente</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input class="form-control" type="text" #textInput placeholder="Valor" (input)="filter(selectInput.value, textInput.value)">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-8">
             <button class="btn btn-primary" (click)="createService()">Crear nuevo servicio</button>
             <br>
-            <table class="table-striped table-hover" style="width: 70%">
+            <br>
+            <table class="table-striped table-hover" style="width: 85%">
                 <thead>
                     <th></th>
                     <th>Id</th>
@@ -12,7 +30,7 @@
                     <th>Cliente</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let service of services">
+                    <tr *ngFor="let service of servicesList">
                         <td>
                             <i class="fas fa-pencil-alt" (click)="selectService(service.ServiceId)"></i>
                         </td>
@@ -32,7 +50,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <service [serviceId]="selectedService" (serviceCreated)="getServices()"></service>
         </div>
     </div>

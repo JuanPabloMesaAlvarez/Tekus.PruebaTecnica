@@ -47,10 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\CacheHandler.cs" />
     <Compile Include="DomainContext\DomainModel.cs" />
-    <Compile Include="Migrations\201808260000590_TekusDB_V1.cs" />
-    <Compile Include="Migrations\201808260000590_TekusDB_V1.Designer.cs">
-      <DependentUpon>201808260000590_TekusDB_V1.cs</DependentUpon>
+    <Compile Include="Migrations\201808271707194_Tekus DB V1.cs" />
+    <Compile Include="Migrations\201808271707194_Tekus DB V1.Designer.cs">
+      <DependentUpon>201808271707194_Tekus DB V1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808260000590_TekusDB_V1.resx">
-      <DependentUpon>201808260000590_TekusDB_V1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808271707194_Tekus DB V1.resx">
+      <DependentUpon>201808271707194_Tekus DB V1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

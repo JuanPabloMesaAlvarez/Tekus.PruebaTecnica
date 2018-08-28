@@ -3,7 +3,7 @@ namespace Tekus.Persistence.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TekusDB_V1 : DbMigration
+    public partial class TekusDBV1 : DbMigration
     {
         public override void Up()
         {
@@ -11,7 +11,7 @@ namespace Tekus.Persistence.Migrations
                 "dbo.Countries",
                 c => new
                     {
-                        CountryId = c.Int(nullable: false, identity: true),
+                        CountryId = c.Int(nullable: false),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.CountryId);

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using Tekus.Domain.Services;
+using Tekus.Domain.Utils.Cache;
 
 namespace Tekus.Application.Services.Contract
 {
-    public interface IServicesServiceController
+    public interface IServicesServiceController : ICacheMode
     {
         /// <summary>
         /// Returns all services

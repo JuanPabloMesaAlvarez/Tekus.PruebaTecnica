@@ -17,6 +17,18 @@ namespace Tekus.Persistence.UnitOfWork
             contexto = new DomainModel();
         }
 
+        public bool IsCacheStorage { get { return contexto.IsCacheStorage; } }
+
+        public void TurnOnCache()
+        {
+            contexto.TurnOnCache();
+        }
+
+        public void TurnOffCache()
+        {
+            contexto.TurnOffCache();
+        }
+
         private ICountriesRepository countriesRepository;
         private ICustomersRepository customersRepository;
         private IServicesRepository servicesRepository;

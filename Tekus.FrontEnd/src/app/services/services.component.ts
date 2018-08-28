@@ -11,6 +11,7 @@ import { Service } from "../models/service";
 export class ServicesComponent implements OnInit {
 
     services: Service[] = [];
+    servicesList: Service[] = [];
     selectedService: number = -1;
 
     constructor(private httpService: ServicesService) {
@@ -24,6 +25,7 @@ export class ServicesComponent implements OnInit {
         this.httpService.getServices().subscribe(
             (result: Service[]) => { 
                 this.services = result;
+                this.servicesList = result;
                 localStorage[this.httpService.localStorageName] = JSON.stringify(this.services); 
             },
             error => { console.log(error); }
@@ -36,5 +38,11 @@ export class ServicesComponent implements OnInit {
 
     selectService(serviceId: number){
         this.selectedService = serviceId;
+    }
+
+    filter(field: string, value: string){
+        this.servicesList = Object.assign([], this.services).filter(
+            item => item[field].toString().toLowerCase().match(value.toLowerCase())
+        );
     }
 }

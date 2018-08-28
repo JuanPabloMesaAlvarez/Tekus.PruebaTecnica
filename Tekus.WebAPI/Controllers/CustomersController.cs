@@ -11,6 +11,7 @@ namespace Tekus.WebAPI.Controllers
 
         public CustomersController(ICustomersServiceController service)
         {
+            service.TurnOffCache();
             this.service = service;
         }
 

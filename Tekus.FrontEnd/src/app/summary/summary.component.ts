@@ -5,7 +5,6 @@ import { CountriesService } from "../countries/countries.service";
 import { Customer } from "../models/customer";
 import { Service } from "../models/service";
 import { Country } from "../models/country";
-import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 @Component({
     selector: 'summary',

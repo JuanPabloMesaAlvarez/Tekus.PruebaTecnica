@@ -3,7 +3,7 @@
 <br>
 <div class="container-fluid">
     <div class="row">
-        Nombre:
+        Cliente:
         <div class="col-md-8">
             <select class="form-control" [(ngModel)]="entity.CustomerId">
                 <option *ngFor="let customer of customers" value="{{customer.CustomerId}}">
@@ -21,6 +21,12 @@
         Valor:
         <div class="col-md-4">
             <input type="number" class="form-control" [(ngModel)]="entity.Cost">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let country of countries">
+            <input type="checkbox" value="country.CountryId" [checked]="existCountry(country.CountryId)" (change)="selectCountry(country.CountryId)">
+            {{country.Name}}
         </div>
     </div>
 </div>

@@ -1,6 +1,23 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-1">
+            <b>Filtro</b>
+        </div>
+        <div class="col-md-1">
+            <select #selectInput class="form-control">
+                <option value="CustomerId">Id</option>
+                <option value="Nit">Nit</option>
+                <option value="Name">Nombre</option>
+                <option value="Email">Email</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" #textInput placeholder="Valor" (input)="filter(selectInput.value, textInput.value)">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
             <table class="table-striped table-hover" style="width: 70%">
                 <thead>
                     <th></th>
@@ -10,7 +27,7 @@
                     <th>Email</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let customer of customers">
+                    <tr *ngFor="let customer of customersList">
                         <td>
                             <!-- <i class="fas fa-pencil-alt" (click)="selectCustomer(customer.CustomerId)"></i> -->
                         </td>

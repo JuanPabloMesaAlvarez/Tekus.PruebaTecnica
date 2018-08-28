@@ -12,8 +12,11 @@
           <a class="nav-link" href="#" routerLink="/home/summary" routerLinkActive="active">Resumen</a>
         </li>
     </ul>
-    <span>
+    <span style="padding-right:15px;">
       <button [ngClass]="{'btn btn-primary': dbStorage, 'btn btn-danger': !dbStorage}" (click)="changeDbStorage()">Base de datos</button>
+    </span>
+    <span>
+      <button [ngClass]="{'btn btn-primary': srvCache, 'btn btn-danger': !srvCache}" (click)="changeSrvCache()">Cache de Servidor</button>
     </span>
   </div>
 </nav>

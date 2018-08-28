@@ -3,11 +3,13 @@ import { ServicesService } from "./services.service";
 import { CustomersService } from "../customers/customers.service";
 import { Service } from "../models/service";
 import { Customer } from "../models/customer";
+import { CountriesService } from "../countries/countries.service";
+import { Country } from "../models/country";
 
 @Component({
     selector: 'service',
     templateUrl: './service.component.html',
-    providers: [ServicesService, CustomersService]
+    providers: [ServicesService, CustomersService, CountriesService]
 })
 
 export class ServiceComponent implements OnChanges {
@@ -17,12 +19,14 @@ export class ServiceComponent implements OnChanges {
 
     entity: Service = new Service();
     customers: Customer[] = [];
+    countries: Country[] = [];
 
-    constructor(private service: ServicesService, private customerService: CustomersService) {
+    constructor(private service: ServicesService, private customerService: CustomersService, private countryServices: CountriesService) {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         this.getCustomers();
+        this.getCountries();
         
         if (changes["serviceId"].previousValue === changes["serviceId"].currentValue) {
             return;
@@ -40,6 +44,13 @@ export class ServiceComponent implements OnChanges {
             error => {
                 console.log(error.error.ExceptionMessage);
             }
+        );
+    }
+
+    getCountries(){
+        this.countryServices.getCountries().subscribe(
+            (result: Country[]) => { this.countries = result },
+            error => { console.log(error); }
         );
     }
 
@@ -64,5 +75,22 @@ export class ServiceComponent implements OnChanges {
             error => { console.error(error.error.ExceptionMessage); }
 
         );
+    }
+
+    selectCountry(selectedCountry: number){
+        var item = this.entity.CountriesIds.indexOf(selectedCountry);
+        if (item > -1) {
+            this.entity.CountriesIds.splice(item, 1);
+            return;
+        }
+        this.entity.CountriesIds.push(selectedCountry);
+    }
+
+    existCountry(countryId: number) {
+        if (!this.entity.CountriesIds) {
+            return false;
+        }
+        
+        return this.entity.CountriesIds.indexOf(countryId) > -1;
     }
 }

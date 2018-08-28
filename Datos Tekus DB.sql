@@ -1,6 +1,6 @@
 
-INSERT INTO Countries (Name) VALUES ('Colombia'),('Brasil'),('Ecuador')
-,('Venezuela'),('Bolivia'),('Uruaguay'),('Paraguay'),('Peru'),('Argentina'),('Chile')
+INSERT INTO Countries (CountryId, Name) VALUES (1,'Colombia'),(2,'Brasil'),(3,'Ecuador')
+,(4,'Venezuela'),(5,'Bolivia'),(6,'Uruaguay'),(7,'Paraguay'),(8,'Peru'),(9,'Argentina'),(10,'Chile')
 
 INSERT INTO Customers (Nit, Name, Email) 
 VALUES (890010999, 'ESPACIAL', 'espacial@espacial.com'),(890010998, 'QUANTICA', 'quantica@quantica.com'),(890010997, 'HIDRAULICA', 'hidraulica@hidraulica.com'),

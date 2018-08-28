@@ -7,13 +7,13 @@ namespace Tekus.Persistence.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class TekusDB_V1 : IMigrationMetadata
+    public sealed partial class TekusDBV1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TekusDB_V1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TekusDBV1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808260000590_TekusDB_V1"; }
+            get { return "201808271707194_Tekus DB V1"; }
         }
         
         string IMigrationMetadata.Source

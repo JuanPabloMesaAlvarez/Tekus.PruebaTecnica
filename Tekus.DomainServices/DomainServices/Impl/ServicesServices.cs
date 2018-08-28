@@ -39,5 +39,15 @@ namespace Tekus.DomainServices.DomainServices.Impl
             unitOfWork.SaveChanges();
             return udtService;
         }
+
+        public void TurnOffCache()
+        {
+            unitOfWork.TurnOffCache();
+        }
+
+        public void TurnOnCache()
+        {
+            unitOfWork.TurnOnCache();
+        }
     }
 }

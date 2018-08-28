@@ -23,5 +23,15 @@ namespace Tekus.Application.Services.Impl
         {
             return service.GetCustomers();
         }
+
+        public void TurnOffCache()
+        {
+            service.TurnOffCache();
+        }
+
+        public void TurnOnCache()
+        {
+            service.TurnOnCache();
+        }
     }
 }

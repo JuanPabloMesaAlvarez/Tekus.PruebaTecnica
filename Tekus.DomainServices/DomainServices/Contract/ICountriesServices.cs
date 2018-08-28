@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using Tekus.Domain.Countries;
+using Tekus.Domain.Utils.Cache;
 
 namespace Tekus.DomainServices.DomainServices.Contract
 {
-    public interface ICountriesServices
+    public interface ICountriesServices : ICacheMode
     {
         /// <summary>
         /// Returns all countries 

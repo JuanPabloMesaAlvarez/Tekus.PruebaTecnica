@@ -1,22 +1,22 @@
-import { HttpHandlerService } from "../Utils/httpHandler/httpHandler.service";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { ServiceBase } from "../Utils/services/serviceBase";
+import { HttpHandlerService } from "../Utils/httpHandler/httpHandler.service";
 
 @Injectable()
-export class CustomersService {
-
-    localStorageName: string = "customers";
-    public get dbStorage(): boolean {
-        return JSON.parse(localStorage["dbStorage"]);
-    }
+export class CustomersService extends ServiceBase {
 
     constructor(private http: HttpHandlerService) {
-
+        super()
+        this.localStorageName = "customers";
     }
 
     getCustomers() {
         if (this.dbStorage) {
             var uri = "customers";
+            if (this.srvCache) {
+                uri += "cache"
+            }
             return this.http.get(uri);
         }
         else {
@@ -28,6 +28,9 @@ export class CustomersService {
     getCustomerById(customerId: string) {
         if (this.dbStorage) {
             var uri = `customers/${customerId}`;
+            if (this.srvCache) {
+                uri = `customerscache/${customerId}`
+            }
             return this.http.get(uri);
         }
         else {

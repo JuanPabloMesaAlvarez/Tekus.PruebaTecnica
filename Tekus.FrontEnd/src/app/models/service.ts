@@ -3,4 +3,5 @@ export class Service {
     Name: string;
     Cost: number;
     CustomerId: number;
+    CountriesIds: number[] = [];
 }

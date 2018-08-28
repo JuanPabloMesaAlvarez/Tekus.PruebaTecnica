@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using Tekus.Domain.Customers;
+using Tekus.Domain.Utils.Cache;
 
 namespace Tekus.DomainServices.DomainServices.Contract
 {
-    public interface ICustomersServices
+    public interface ICustomersServices : ICacheMode
     {
         /// <summary>
         /// Returns all customers
